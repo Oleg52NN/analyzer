@@ -16,11 +16,11 @@ public class CounterA extends Thread{
                 throw new RuntimeException(e);
             }
             counting(s, 'a');
-            if(swapA < quantityA.get()){
-                swapA = quantityA.get();
+            if(swapA < quantityA){
+                swapA = quantityA;
                 resultA = s;
             }
-            quantityA.set(0);
+            quantityA = 0;
         }
         System.out.println("Максимальное количество символов \'a\' в строке = " + swapA + "\nТак выглядит строка:\n" + resultA + "\n");
     }

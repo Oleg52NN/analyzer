@@ -14,11 +14,11 @@ public class CounterB extends Thread{
                 throw new RuntimeException(e);
             }
             counting(s, 'b');
-            if(swapB < quantityB.get()){
-                swapB = quantityB.get();
+            if(swapB < quantityB){
+                swapB = quantityB;
                 resultB = s;
             }
-            quantityB.set(0);
+            quantityB = 0;
         }
         System.out.println("Максимальное количество символов \'b\' в строке = " + swapB + "\nТак выглядит строка:\n" + resultB + "\n");
 

@@ -14,11 +14,11 @@ public class CounterC extends Thread{
                 throw new RuntimeException(e);
             }
             counting(s, 'c');
-            if(swapC < quantityC.get()){
-                swapC = quantityC.get();
+            if(swapC < quantityC){
+                swapC = quantityC;
                 resultC = s;
             }
-            quantityC.set(0);
+            quantityC = 0;
         }
         System.out.println("Максимальное количество символов \'c\' в строке = " + swapC + "\nТак выглядит строка:\n" + resultC + "\n");
 

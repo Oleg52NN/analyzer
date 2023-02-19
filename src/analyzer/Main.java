@@ -14,10 +14,9 @@ public class Main {
     static BlockingQueue <String> queueA = new ArrayBlockingQueue(lengthQueue);
     static BlockingQueue <String> queueB = new ArrayBlockingQueue(lengthQueue);
     static BlockingQueue <String> queueC = new ArrayBlockingQueue(lengthQueue);
-    static AtomicInteger quantityA = new AtomicInteger(0);
-    static AtomicInteger quantityB = new AtomicInteger(0);
-    static AtomicInteger quantityC = new AtomicInteger(0);
-    static AtomicInteger quantityAll = new AtomicInteger(0);
+    static int quantityA = 0;
+    static int quantityB = 0;
+    static int quantityC = 0;
     static String resultA;
     static String resultB;
     static String resultC;
