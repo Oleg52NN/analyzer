@@ -3,10 +3,12 @@ package analyzer;
 import static analyzer.Main.*;
 import static analyzer.Quantity.counting;
 
-public class CounterB extends Thread{
+public class CounterB extends Thread {
     @Override
-    public void run(){
-        String s = null;
+    public void run() {
+        String s;
+        String result = null;
+        int swap = 0;
         for (int i = 0; i < masSize; i++) {
             try {
                 s = queueB.take();
@@ -14,13 +16,13 @@ public class CounterB extends Thread{
                 throw new RuntimeException(e);
             }
             counting(s, 'b');
-            if(swapB < quantityB){
-                swapB = quantityB;
-                resultB = s;
+            if (swap < quantityB) {
+                swap = quantityB;
+                result = s;
             }
             quantityB = 0;
         }
-        System.out.println("Максимальное количество символов \'b\' в строке = " + swapB + "\nТак выглядит строка:\n" + resultB + "\n");
+        System.out.println("Максимальное количество символов 'b' в строке = " + swap + "\nТак выглядит строка:\n" + result + "\n");
 
     }
 }
