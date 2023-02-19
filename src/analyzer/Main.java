@@ -13,9 +13,7 @@ public class Main {
     static BlockingQueue<String> queueA = new ArrayBlockingQueue<>(lengthQueue);
     static BlockingQueue<String> queueB = new ArrayBlockingQueue<>(lengthQueue);
     static BlockingQueue<String> queueC = new ArrayBlockingQueue<>(lengthQueue);
-    static int quantityA = 0;
-    static int quantityB = 0;
-    static int quantityC = 0;
+
 
     public static void main(String[] args) {
         new Thread(() -> {
@@ -30,11 +28,11 @@ public class Main {
                 }
             }
         }).start();
-        Thread counterA = new CounterA();
+        Thread counterA = new Counter('a', queueA);
         counterA.start();
-        Thread counterB = new CounterB();
+        Thread counterB = new Counter('b', queueB);
         counterB.start();
-        Thread counterC = new CounterC();
+        Thread counterC = new Counter('c', queueC);
         counterC.start();
     }
 
